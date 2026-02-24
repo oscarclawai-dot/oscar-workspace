@@ -2,6 +2,14 @@
 
 Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
 
+## GitHub Repositories
+
+### Chris's Projects (READ-ONLY)
+- **telemetry-v2** (citterly/telemetry-v2) - Race car telemetry analyzer
+  - **Role:** Consultant/code reviewer only
+  - **Rule:** Read, analyze, suggest - NO COMMITS OR PUSHES without explicit permission
+  - **Location:** `/home/oscar/.openclaw/workspace/telemetry-v2`
+
 ## What Goes Here
 
 Things like:
