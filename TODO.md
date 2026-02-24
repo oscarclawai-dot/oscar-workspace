@@ -56,6 +56,13 @@
   - Consider local LLM on Z8 workstation (2x RTX 4000 Ada) for heartbeats/repetitive tasks
   - Potentially add OpenAI integration for load balancing
 - **Share spec-builder skill repo with Oscar** (Chris needs to create separate repo for AI coding harness)
+- **Token usage optimization system**
+  - Created TOKEN-STRATEGY.md with full plan
+  - Need to verify Claude Max tier (5x or 20x)
+  - Need to find weekly reset day/time
+  - Build usage tracking system
+  - Create weekly review routine
+  - Identify backlog of productive tasks for unused tokens
 - **Remote access to OpenClaw dashboard via Tailscale**
   - Currently only accessible on home LAN (192.168.1.31:18789)
   - Set up Tailscale for secure access from outside network
