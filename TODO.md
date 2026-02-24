@@ -40,6 +40,16 @@
 - Explore Eat This Much automation (meal planning)
 - Create systemd service for auto-starting headless browser
 - Explore Nvidia Parakeet as Whisper alternative (current home Whisper feels slow vs Pixel 7 on-device)
+- **Set up separate OpenClaw agent for Lily** (if interested - need to ask her first)
+  - Message draft: `message-to-lily.txt`
+  - Would use her Claude account API key
+  - Separate workspace, totally isolated from Chris's
+  - Separate Telegram chat or messaging surface
+- **Model strategy optimization**
+  - Default to Haiku for simple tasks, Sonnet for conversations/code review, Opus for hard problems
+  - Consider local LLM on Z8 workstation (2x RTX 4000 Ada) for heartbeats/repetitive tasks
+  - Potentially add OpenAI integration for load balancing
+- **Share spec-builder skill repo with Oscar** (Chris needs to create separate repo for AI coding harness)
 
 ---
 
