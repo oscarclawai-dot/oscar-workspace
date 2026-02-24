@@ -42,6 +42,24 @@
 
 ## 💡 Someday / Maybe
 
+- **Set up Text-to-Speech (give Oscar a voice!)** 🎤
+  - **Research complete:** See TTS-RESEARCH.md for full analysis
+  - **Recommendation:** Start with ElevenLabs free tier (10k chars/month)
+  - Use cases: phone calls, voice messages, audio summaries
+  - Future: Local TTS on Z8 workstation for unlimited free generation
+  - Options compared: ElevenLabs, OpenAI TTS, Google Cloud, local models
+- **Set up Twilio for phone call automation** 🎯 ⚾
+  - Get phone number (~$1/month) + pay-as-you-go calls (~$0.01/min)
+  - Official API for making/receiving calls programmatically
+  - Features: outbound calls, inbound routing, SMS, call recording, voicemail transcription
+  - **KEY USE CASE:** Softball roster management (Wednesday games)
+    - Text team on Monday for availability
+    - Track responses, follow up with non-responders
+    - Confirm roster by Tuesday
+    - Send game day reminders Wednesday
+    - See SOFTBALL-ROSTER.md for workflow
+  - Other uses: appointment scheduling, calling businesses, automated reminders
+  - Alternative: Browser automation with Google Voice (free but hacky)
 - Consider setting up GitHub repo for workspace docs
 - Explore Eat This Much automation (meal planning)
 - Create systemd service for auto-starting headless browser
