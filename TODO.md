@@ -10,6 +10,12 @@
   - **Time:** Between 7:00 AM - 9:00 AM
   - **Status:** ASAP - don't delay
 
+- [ ] **Troubleshoot dashboard LAN access**
+  - Gateway listening on 0.0.0.0:18789 but not accessible from phone or school laptop
+  - Both hang at 20% loading progress
+  - Works locally on ThinkPad
+  - Possible firewall or auth issue - investigate later
+
 - [x] ~~Confirm Bronson Hearing Center appointment~~ ✅
   - **Confirmed!** Appointment March 2 at 9:30 AM
   - Online check-in: https://mchrt.io/hcT9rm4kMo8xBZjWLWk
@@ -50,6 +56,10 @@
   - Consider local LLM on Z8 workstation (2x RTX 4000 Ada) for heartbeats/repetitive tasks
   - Potentially add OpenAI integration for load balancing
 - **Share spec-builder skill repo with Oscar** (Chris needs to create separate repo for AI coding harness)
+- **Remote access to OpenClaw dashboard via Tailscale**
+  - Currently only accessible on home LAN (192.168.1.31:18789)
+  - Set up Tailscale for secure access from outside network
+  - OpenClaw has built-in Tailscale support (currently mode: "off" in config)
 
 ---
 
