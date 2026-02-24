@@ -1,0 +1,18 @@
+# Sensitive files
+*.key
+*.pem
+*.token
+*secret*
+*credential*
+
+# OpenClaw config (may contain tokens)
+.openclaw/
+
+# Temp files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
