@@ -196,4 +196,96 @@ Chris set me up on February 15, 2026 with help from Claude. Process:
 
 ---
 
+## 2026-02-25 - Daily Health Check (6 AM)
+
+### `openclaw doctor` Findings
+
+**1. Auth profile cooldown (claude_max)** *(recurring)*
+- **Status:** anthropic:claude_max is in 1h cooldown
+- **Impact:** Can't use claude-opus-4 until cooldown expires
+- **Action:** None needed — wait or use default claude-sonnet-4-5
+
+**2. ⚠️ Gateway bound to LAN (0.0.0.0)** *(NEW SECURITY CONCERN)*
+- **Issue:** Gateway is network-accessible on 0.0.0.0
+- **Impact:** Exposed to local network; requires strong auth credentials
+- **Related:** No auth rate limiting configured (see security audit below)
+- **Action:** Either:
+  - Revert to `gateway.bind: "loopback"` + SSH tunneling
+  - Configure `gateway.auth.rateLimit` to mitigate brute-force attacks
+- **Recommendation:** Revert to loopback for better security posture
+
+**3. Gateway service config issues** *(recurring)*
+- **PATH not set:** Expected for daemon (minimal PATH)
+- **Entrypoint mismatch:** Service points to old path vs current install
+  - Current: `/usr/bin/openclaw -> /usr/lib/node_modules/openclaw/dist/index.js`
+- **Action:** Run `openclaw doctor --fix` to update service file
+
+**4. Memory search provider missing** *(recurring)*
+- **Issue:** Memory search enabled but no embedding provider configured
+- **Impact:** Semantic recall (memory_search tool) won't work
+- **Status:** Persistent configuration item — needs decision
+- **Action:** Configure provider or disable feature
+
+**5. Cleanup hints**
+- Old systemd service files detected
+- Run to clean up:
+  ```bash
+  systemctl --user disable --now openclaw-gateway.service
+  rm ~/.config/systemd/user/openclaw-gateway.service
+  ```
+
+**6. Skills status**
+- Eligible: 6
+- Missing requirements: 43
+- Blocked by allowlist: 0
+- **Action:** Review which skills need requirements installed
+
+**7. Other services detected**
+- chromium-headless.service running (no impact)
+
+### `openclaw security audit` Findings
+
+**⚠️ WARN: No auth rate limiting configured** *(NEW)*
+- **Issue:** gateway.bind is not loopback (0.0.0.0) but no `gateway.auth.rateLimit` configured
+- **Impact:** Vulnerable to brute-force auth attacks from network
+- **Fix:** Set `gateway.auth.rateLimit` in config:
+  ```json
+  {
+    "maxAttempts": 10,
+    "windowMs": 60000,
+    "lockoutMs": 300000
+  }
+  ```
+- **Action Required:** Either configure rate limiting OR revert to loopback bind
+
+**Attack Surface Summary (INFO):**
+- Open groups: 0
+- Allowlist groups: 1
+- tools.elevated: enabled
+- hooks.webhooks: disabled
+- hooks.internal: enabled
+- browser control: enabled
+
+### Summary
+
+**Critical:** None  
+**Warnings:** 1 critical security concern (LAN binding without rate limiting)  
+**New Issues:**
+- Gateway exposed to LAN (0.0.0.0) without auth rate limiting — **NEEDS ATTENTION**
+
+**Recurring Items:**
+- Gateway service entrypoint mismatch (run doctor --fix)
+- Memory search provider decision needed
+- Old systemd service files cleanup
+
+**Recommendation:** 
+1. **Priority 1:** Secure gateway — either revert to loopback or add rate limiting
+2. Run `openclaw doctor --fix` to update service file
+3. Clean up old systemd files
+4. Decide on memory search configuration
+
+**Overall Status:** ⚠️ **NEEDS ATTENTION** — Gateway security configuration change requires follow-up
+
+---
+
 _This log exists so future-me doesn't repeat past-me's mistakes._

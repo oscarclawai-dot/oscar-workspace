@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "description": "Claude Max usage tracking for subscription optimization",
+    "reset_schedules": {
+      "all_models": "Sunday 2:00 PM EST",
+      "sonnet_only": "Saturday 8:00 AM EST",
+      "session": "5-hour rolling window"
+    },
+    "subscription_cost": 100,
+    "goal": "Maximize utilization of paid quota before weekly resets"
+  },
+  "snapshots": [
+    {
+      "timestamp": "2026-02-25T08:00:00-05:00",
+      "source": "memory (Phase 2 start)",
+      "session_pct": 0,
+      "all_models_pct": 12,
+      "sonnet_only_pct": 13,
+      "notes": "Fresh 5-hour window after reset"
+    },
+    {
+      "timestamp": "2026-02-25T09:20:00-05:00",
+      "source": "screenshot from web app",
+      "session_pct": 44,
+      "all_models_pct": 15,
+      "sonnet_only_pct": 14,
+      "session_remaining_hours": 2.78,
+      "notes": "After web app testing session"
+    }
+  ],
+  "weekly_targets": {
+    "description": "Target utilization by end of week to avoid wasting subscription",
+    "all_models_target": 90,
+    "sonnet_only_target": 90,
+    "rationale": "Leave 10% buffer for unexpected needs"
+  },
+  "backlog": {
+    "description": "Tasks queued for token utilization when usage is low",
+    "location": "QUOTA-BACKLOG.md",
+    "notes": "Prioritized list of autonomous work for burning tokens productively"
+  },
+  "notification_cadence": {
+    "mon_wed": "1x/day (morning brief)",
+    "thu_fri_if_low": "2x/day (morning + evening)",
+    "escalation_threshold": "Below 60% utilization on Thursday",
+    "saturday_8am": "Sonnet quota reset reminder",
+    "sunday_2pm": "All models reset reminder"
+  }
+}

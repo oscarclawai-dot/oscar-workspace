@@ -49,7 +49,11 @@
   - Future: Local TTS on Z8 workstation for unlimited free generation
   - Options compared: ElevenLabs, OpenAI TTS, Google Cloud, local models
 - **Set up Twilio for phone call automation** 🎯 ⚾
-  - Get phone number (~$1/month) + pay-as-you-go calls (~$0.01/min)
+  - **DECISION:** Get NEW Twilio number (don't port Google Voice)
+    - Keep existing Google Voice number (269.207.7044) safe
+    - Get fresh 269 area code number from Twilio (~$1.15/month)
+    - Google Voice won't accept ports back from Twilio (one-way trip)
+  - Cost: ~$1.15/month for number + ~$0.0075/SMS + ~$0.013/min calls
   - Official API for making/receiving calls programmatically
   - Features: outbound calls, inbound routing, SMS, call recording, voicemail transcription
   - **KEY USE CASE:** Softball roster management (Wednesday games)
@@ -59,7 +63,6 @@
     - Send game day reminders Wednesday
     - See SOFTBALL-ROSTER.md for workflow
   - Other uses: appointment scheduling, calling businesses, automated reminders
-  - Alternative: Browser automation with Google Voice (free but hacky)
 - Consider setting up GitHub repo for workspace docs
 - Explore Eat This Much automation (meal planning)
 - Create systemd service for auto-starting headless browser

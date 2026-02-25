@@ -13,8 +13,9 @@
 **Two separate weekly quotas (as of Feb 24, 2026 baseline):**
 
 1. **Sonnet only:**
-   - Weekly reset: **Saturday 8:00 AM**
+   - Weekly reset: **Saturday 7:59 AM**
    - Baseline (Mon evening): **8% used**
+   - Updated reading (Mon ~3 PM): **9% used**
    
 2. **All models:**
    - Weekly reset: **Sunday 2:00 PM**  

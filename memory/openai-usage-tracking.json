@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "description": "OpenAI ChatGPT Plus usage tracking",
+    "allocation": "Full OpenAI quota allocated to Oscar for autonomous work",
+    "approval_model": "Oscar proposes, Chris approves",
+    "quota_limits": {
+      "gpt_4o": "~150 messages per 3-hour window",
+      "o3_mini": "~100 messages per week",
+      "o4_mini": "~300 messages per day"
+    },
+    "quota_tracking": {
+      "command": "openclaw models status",
+      "windows": {
+        "5_hour_window": "~2.87M tokens estimated (97% = unused capacity)",
+        "daily_quota": "Separate limit, much higher capacity"
+      }
+    }
+  },
+  "work_sessions": [
+    {
+      "timestamp": "2026-02-25T10:37:56-05:00",
+      "task": "OpenAI integration test",
+      "model": "openai-codex/gpt-5.3-codex",
+      "status": "completed",
+      "output": "Verified OAuth + subscription working",
+      "estimated_tokens": 100,
+      "notes": "Initial test run - model name troubleshooting"
+    },
+    {
+      "timestamp": "2026-02-25T12:15:00-05:00",
+      "task": "Batch research generation",
+      "model": "openai-codex/gpt-5.3-codex",
+      "status": "completed",
+      "subtasks": [
+        "RAG evaluation framework research (22.3k tokens)",
+        "Body cam transcript analysis research (20.8k tokens)",
+        "Telemetry visualization guide (28.1k tokens)",
+        "Creative technical content (~15k tokens estimated)"
+      ],
+      "actual_tokens": 86200,
+      "quota_impact": {
+        "5_hour_window": "0% -> 3% (97% remaining)",
+        "daily_quota": "0% -> 1% (99% remaining)"
+      },
+      "notes": "First approved batch - measured actual quota burn rate"
+    }
+  ],
+  "quota_snapshots": [
+    {
+      "timestamp": "2026-02-25T12:35:00-05:00",
+      "five_hour_pct_used": 3,
+      "five_hour_remaining": "97%",
+      "five_hour_reset": "2h 42m",
+      "daily_pct_used": 1,
+      "daily_remaining": "99%",
+      "daily_reset": "6d 21h",
+      "notes": "After first batch of 4 research docs"
+    }
+  ],
+  "proposals_pending": [],
+  "proposals_approved": [
+    {
+      "date": "2026-02-25",
+      "proposal": "Run 4 research/doc generation tasks to test OpenAI integration",
+      "status": "executing",
+      "approver": "Chris"
+    }
+  ],
+  "weekly_summary": {
+    "week_start": "2026-02-23",
+    "total_sessions": 2,
+    "high_value_output": 4,
+    "tokens_estimated": 15100,
+    "quota_remaining": "unknown - need baseline"
+  }
+}

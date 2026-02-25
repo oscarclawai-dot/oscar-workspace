@@ -65,10 +65,21 @@ EOF
 ```
 
 **Gateway details:**
-- Chris: `2692707761@mypixmessages.com` (Xfinity Mobile/Verizon)
-- Lily: `2692547560@mypixmessages.com` (Verizon)
-- Format: `@mypixmessages.com` supports text + photos (MMS)
-- Format: `@vtext.com` is text-only with 140 char limit (didn't work reliably)
+- Chris: `2692707761@mypixmessages.com` (Xfinity Mobile/Verizon) - **WORKING ✅**
+- Lily: `2692547560@vtext.com` (Verizon) - **WORKING ✅**
+  - `@vtext.com` - WORKS (text-only, use this)
+  - `@vzwpix.com` - WORKS (MMS alternative)
+  - `@mypixmessages.com` - FAILED (didn't deliver)
+
+**Verizon Gateway Recommendations:**
+- **Use `@vtext.com` for Lily** - proven reliable
+- Use `@vzwpix.com` as backup if MMS needed
+- Avoid `@mypixmessages.com` - delivery failures
+
+**Known Issue:** Verizon email-to-SMS gateways vary in reliability by email provider and gateway. Testing showed:
+- Gmail → @vtext.com: ✅ Works
+- Gmail → @vzwpix.com: ✅ Works  
+- Gmail → @mypixmessages.com: ❌ Failed
 
 **Other useful commands:**
 ```bash
@@ -87,6 +98,10 @@ himalaya message --help
 - **SMTP Server:** smtp.gmail.com
 - **Port:** 465 (TLS)
 - **Auth:** App password (stored in config)
+
+### Limitations
+- ⚠️ **No attachment support** - Himalaya CLI doesn't handle attachments well
+- **Workaround:** Include file contents directly in email body using `cat filename`
 
 ---
 

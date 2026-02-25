@@ -12,10 +12,24 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `MODEL-DISPLAY-RULE.md` — prefix EVERY message with model being used
+4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
 Don't ask permission. Just do it.
+
+## Model Display Rule (MANDATORY)
+
+**Every message must start with:** `[Model: model-name]`
+
+Example:
+```
+[Model: openai-codex/gpt-5.3-codex]
+
+Your message content here...
+```
+
+This is non-negotiable. Chris needs to know which quota is being consumed.
 
 ## Memory
 
