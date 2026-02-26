@@ -288,4 +288,55 @@ Chris set me up on February 15, 2026 with help from Claude. Process:
 
 ---
 
+## 2026-02-25 - Infrastructure Hardening Applied (Evening)
+
+### Changes completed
+- Applied lid-close hardening in `/etc/systemd/logind.conf`:
+  - `HandleLidSwitch=ignore`
+  - `HandleLidSwitchExternalPower=ignore`
+  - `HandleLidSwitchDocked=ignore`
+  - `LidSwitchIgnoreInhibited=yes`
+- UFW hardened:
+  - Default inbound `deny`, outbound `allow`
+  - Gateway `18789/tcp` allowed from LAN subnet only (`192.168.1.0/24`)
+  - Gateway `18789/tcp` denied from non-LAN
+  - **SSH also restricted to LAN-only (`192.168.1.0/24`)**
+- Tightened OpenClaw local permissions:
+  - `~/.openclaw` directories `700`
+  - auth/token/key files `600`
+- Fixed OpenClaw warning for LAN binding by enabling auth rate limiting:
+  - `gateway.auth.rateLimit.maxAttempts=10`
+  - `gateway.auth.rateLimit.windowMs=60000`
+  - `gateway.auth.rateLimit.lockoutMs=300000`
+
+### Verification
+- `openclaw security audit --deep`: **0 critical · 0 warn · 1 info**
+- `openclaw health`: Telegram + gateway healthy
+- `openclaw update status`: current on stable `2026.2.24`
+
+### Notes
+- `openclaw gateway restart` via systemd user service is unavailable in this shell (`Failed to connect to bus: No medium found`).
+- Config has been written successfully; restart should be done from Chris's normal login shell/session if needed.
+
+---
+
+## 2026-02-25 - YouTube Transcript Pipeline Notes
+
+### What worked
+- Browser automation can reliably identify the newest video and expand the description (`...more`).
+- Installed local yt-dlp binary to `~/.local/bin/yt-dlp` (version `2026.02.21`).
+- `yt-dlp --write-auto-sub --sub-lang en --skip-download --sub-format vtt` successfully fetched auto-generated subtitles for Nate B Jones latest video.
+
+### What failed / caveats
+- Browser-side "Show transcript" panel frequently stuck on loading in headless attach-only Chromium session.
+- YouTube timedtext endpoint calls from raw HTTP returned empty content in this environment.
+- Direct transcript mirrors are unreliable and sometimes blocked.
+
+### Operational lesson
+- Use browser method first (for structure/metadata), but treat yt-dlp auto-subs as reliable fallback for transcript body.
+- Keep fallback chain explicit: browser transcript -> yt-dlp auto-sub -> Whisper server only if captions are unavailable.
+
+---
+
 _This log exists so future-me doesn't repeat past-me's mistakes._
+2026-02-26 00:03 EST | Health OK | openclaw=ok | disk(/)=10%% used | mem=6.0Gi/15Gi used (9.5Gi avail) | telegram=connected (status: OK)

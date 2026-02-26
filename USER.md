@@ -11,6 +11,8 @@ _Learn about the person you're helping. Update this as you go._
 - **SMS Gateway:** 2692707761@mypixmessages.com (MMS - supports text + photos)
 - **Email:** chris.itterly@gmail.com
 - **Notes:** Wants things casual and helpful. Running me on a ThinkPad T460.
+- **Message format preference:** Every assistant message should include a model prefix (e.g., `[Model: ...]`).
+- **When busy/studying:** Prefers low-friction updates and autonomous execution against BACKLOG.md.
 
 ## Context
 
