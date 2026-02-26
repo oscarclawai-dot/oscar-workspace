@@ -1,0 +1,2 @@
+{"timestamp":"2026-02-26T08:55:00-05:00","task_id":"TB-INIT-001","label":"planning.dashboard.C2.single-agent.D0","task":"Create token execution dashboard","projected_tokens":9000,"projected_class":"T02","actual_tokens":null,"status":"tracking-initialized"}
+{"timestamp":"2026-02-26T08:55:00-05:00","task_id":"TB-INIT-002","label":"planning.spec.C3.single-agent.D0","task":"Define token taxonomy and estimation rules","projected_tokens":14000,"projected_class":"T03","actual_tokens":null,"status":"tracking-initialized"}

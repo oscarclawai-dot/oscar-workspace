@@ -6,6 +6,11 @@ Tasks I can do autonomously to burn Claude tokens productively when:
 - We're behind pace on quota utilization
 - Weekly reset is approaching and we're wasting subscription value
 
+## Process Rule
+- Auto-capture actionable items from conversation into this backlog.
+- If ambiguity exists, add as `Needs confirmation` and continue.
+- Notify Chris when new items are added.
+
 ## How This Works
 
 **When you're busy:**
@@ -20,8 +25,79 @@ Tasks I can do autonomously to burn Claude tokens productively when:
 
 ## Task Backlog (Prioritized)
 
+## This Week Focus (Approved)
+
+- [x] **Decision Desk (ADR Bot)** ✅ v1 drafted (`DECISION-DESK.md`, `DECISION-DESK-SCENARIOS.md`)
+  - Convert ideas into decision records (problem, options, pros/cons, recommendation)
+  - Keep searchable artifacts for future reference
+  - Output: `DECISION-DESK.md` + template file(s)
+
+- [x] **Work Sprint Picker (15/30/60 min)** ✅ v1 drafted (`SPRINT-PICKER.md`)
+  - Generate scoped sprint options from backlog based on available time
+  - Include expected output and effort confidence
+  - Output: `SPRINT-PICKER.md`
+
+- [x] **AI Learning Curator (Software Harness Focus)** ✅ v1 drafted (`AI-LEARNING-CURATOR.md`, `AI-HARNESS-WEEKLY-001.md`)
+  - Daily/weekly digest focused on software-development harnesses and practical tasks for Oscar
+  - Sources: HN, YouTube, relevant engineering content
+  - Output: `AI-LEARNING-CURATOR.md`
+
+- [ ] **Inbox Triage** — **Deferred / explicit approval required**
+  - Do not implement until explicit approval
+  - Reason: access comfort/maturity gate
+
+
 ### Priority 1: High-Value Aligned Work
 *Direct impact on your goals - career, projects, income*
+
+- [ ] **Context Hygiene + Skill Routing Framework**
+  - Define "thin core rules, thick skills" architecture
+  - Create trigger map for when to use each skill
+  - Add confidence thresholds (auto-use vs ask)
+  - Design weekly pruning process for active rules/memory noise
+  - Add multi-layer skill taxonomy router (incremental file loading)
+  - Add missing-skill log + weekly gap review
+  - Outputs: `CONTEXT-HYGIENE-FRAMEWORK.md`, `SKILL-ROUTER-TAXONOMY.md`, `SKILL-GAPS.md`
+
+- [ ] **Trust & Transparency System (Anti-Black-Box)**
+  - Define transparency standards for every major output:
+    - inputs used
+    - assumptions made
+    - method used
+    - confidence level
+    - validation/tests run
+    - open risks/unknowns
+  - Add a required "How this was derived" section template
+  - Add audit trail index linking artifacts, test reports, and decisions
+  - Propose collaboration trust model (what is autonomous vs approval-gated)
+  - Output files: `TRANSPARENCY-STANDARD.md`, `TRACEABILITY-INDEX.md`
+
+- [ ] **Showcase Capability Rollout (All Ideas Added)**
+  - Ralph pattern fit/adoption analysis complete: `RALPH-PATTERN-ADOPTION.md`
+  - Adopt Ralph-lite loop for capability implementation
+  - Decision Desk (this week)
+  - Work Sprint Picker (this week)
+  - AI Learning Curator (this week, harness-focused)
+  - Meeting Brief + Debrief loop
+  - Telemetry Feature Spec Factory
+  - Personal Ops Health Dashboard
+  - Consulting Opportunity Radar
+  - Token Arbitrage Planner
+  - Autonomy Budget Contracts
+  - Inbox Triage (deferred until Chris approval)
+
+- [x] **Capability Matrix Research (NEW)** ✅ (initial draft complete: `CAPABILITY-MATRIX.md`)
+  - Wait for Chris's list of potential capabilities
+  - Research each capability end-to-end
+  - Score on:
+    - Difficulty to build
+    - Value generated
+    - Expected frequency of use
+    - Maintenance burden
+    - Reliability/risk
+    - Time-to-first-value
+  - Deliver ranked matrix + phased implementation plan
+  - Output file: `CAPABILITY-MATRIX.md`
 
 - [ ] **Generate telemetry analyzer documentation** (large token spend)
   - User guides, API docs, deployment guides
@@ -50,6 +126,18 @@ Tasks I can do autonomously to burn Claude tokens productively when:
 
 ### Priority 2: Medium-Value Work
 *Useful but not urgent*
+
+- [ ] **Database Adoption Decision (for agent operations)**
+  - Research when flat files are enough vs when DB is better
+  - Identify candidate datasets: token ledger, decisions index, backlog items, traceability links
+  - Propose lightweight options (SQLite-first) + migration plan
+  - Include cost/complexity and maintenance tradeoffs
+  - Output: `DATABASE-ADOPTION-PLAN.md`
+
+- [ ] **Fix LAN access for markdown viewer (firewall policy)** — **Approval required (Chris must be involved)**
+  - Investigate/adjust UFW rules to allow chosen viewer port from LAN
+  - Validate from phone on local Wi-Fi
+  - Document rollback + persistent run strategy
 
 - [ ] **Organize workspace documentation**
   - Review and consolidate memory files

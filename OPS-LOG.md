@@ -340,3 +340,56 @@ Chris set me up on February 15, 2026 with help from Claude. Process:
 
 _This log exists so future-me doesn't repeat past-me's mistakes._
 2026-02-26 00:03 EST | Health OK | openclaw=ok | disk(/)=10%% used | mem=6.0Gi/15Gi used (9.5Gi avail) | telegram=connected (status: OK)
+2026-02-26 04:04:05 EST | HealthCheck OK | openclaw=healthy | disk /=11% used (19G/192G) | mem=5.7Gi/15Gi used | telegram=connected (status: OK)
+
+## 2026-02-26 - Daily Health Check (6 AM)
+
+### `openclaw doctor` Findings
+
+**1. Legacy Telegram allowFrom state detected**
+- Migration hint shown:
+  - From: `/home/oscar/.openclaw/credentials/telegram-allowFrom.json`
+  - To: `/home/oscar/.openclaw/credentials/telegram-default-allowFrom.json`
+- **Action:** Run `openclaw doctor --fix` to apply cleanup/migration automatically.
+
+**2. Orphan session transcripts**
+- Found **9 orphan transcript files** under `~/.openclaw/agents/main/sessions` not referenced by `sessions.json`.
+- **Impact:** Disk growth over time.
+- **Action:** Run `openclaw doctor --fix` or manually clean old orphan files after review.
+
+**3. Gateway service config mismatch (recurring)**
+- Service `OPENCLAW_GATEWAY_TOKEN` missing/mismatched vs `gateway.auth.token` in config.
+- Service `PATH` not set to expected minimal daemon path.
+- **Action:** `openclaw doctor --fix`.
+
+**4. Security posture reminder**
+- Doctor warns gateway is bound to **LAN / 0.0.0.0** (network-accessible).
+- **Action:** Keep strong auth/rate limits; loopback + SSH tunnel remains safer if remote LAN access is not required.
+
+**5. Memory search provider not configured (recurring)**
+- Semantic recall unavailable until embedding provider/API key is configured.
+- **Action:** Configure provider credentials or disable memory search.
+
+### `openclaw security audit` Findings
+
+- Result: **0 critical · 0 warn · 1 info**
+- Info only: attack surface summary
+  - open groups: 0
+  - allowlist groups: 1
+  - elevated tools: enabled
+  - webhooks: disabled
+  - internal hooks: enabled
+  - browser control: enabled
+
+### Summary
+
+**Critical:** None  
+**Warnings:** None (audit clean)  
+**Operational issues to follow up:**
+1. Run `openclaw doctor --fix` (legacy state + service config + orphan cleanup)
+2. Decide whether LAN bind is still needed vs loopback+tunnel model
+3. Configure or disable memory search embeddings
+
+**Overall Status:** ✅ Secure from audit perspective; 🛠️ routine maintenance items remain from doctor output.
+2026-02-26 08:04:04 EST | HEALTHY | openclaw=OK telegram=OK disk(/)=11% mem_avail=10047MB
+2026-02-26 12:04:00 EST | HEALTHY | openclaw=OK telegram=OK disk(/)=11% mem_avail=9.7Gi

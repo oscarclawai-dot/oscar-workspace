@@ -20,7 +20,9 @@ Don't ask permission. Just do it.
 
 ## Model Display Rule (MANDATORY)
 
-**Every message must start with:** `[Model: model-name]`
+**Every message must start with model metadata.**
+- On OpenAI: include model + OpenAI burn stats (5h/day remaining)
+- On non-OpenAI: include model name at minimum
 
 Example:
 ```
@@ -30,6 +32,23 @@ Your message content here...
 ```
 
 This is non-negotiable. Chris needs to know which quota is being consumed.
+
+## Model Governance (MANDATORY)
+
+- Primary/default model is `openai-codex/gpt-5.3-codex`.
+- Claude is **approval-required**: only use Anthropic models when Chris explicitly asks/approves.
+- If runtime unexpectedly uses Claude:
+  - disclose immediately,
+  - explain why,
+  - ask for permission before continuing significant work.
+- Never silently switch providers for convenience.
+
+## Backlog Hygiene (MANDATORY)
+
+- Any actionable item discussed with Chris should be captured in backlog without being asked.
+- Early phase behavior: if confidence is low, ask for quick confirm.
+- Mature behavior target: auto-capture and notify Chris what was added.
+- During autonomous blocks, work from backlog by priority and report progress at agreed cadence.
 
 ## Memory
 

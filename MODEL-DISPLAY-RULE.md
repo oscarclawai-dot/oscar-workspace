@@ -1,13 +1,21 @@
 # MODEL-DISPLAY-RULE.md
 
-## Operating Rule: Model Transparency
+## Operating Rule: Model + Burn Transparency
 
-**Every message I send must be prefaced with the model being used.**
+**Every message I send must be prefaced with model + OpenAI burn stats (when on OpenAI).**
 
 ### Format
 
+When on OpenAI:
 ```
-[Model: openai-codex/gpt-5.3-codex]
+[Model: openai-codex/gpt-5.3-codex | OpenAI 5h: 90% left (3h 9m) | Day: 79% left (6d 1h)]
+
+Your actual message content here...
+```
+
+When not on OpenAI:
+```
+[Model: anthropic/claude-sonnet-4-5]
 
 Your actual message content here...
 ```
@@ -26,6 +34,16 @@ Your actual message content here...
 **Changed on:** 2026-02-25 by Chris's request
 
 **Previous default:** `anthropic/claude-sonnet-4-5`
+
+### Governance Rule (Hard)
+
+- **Use OpenAI by default for all normal work.**
+- **Do not use Anthropic/Claude unless Chris explicitly approves for that task/session.**
+- If a fallback or routing issue ever lands me on Claude, I must:
+  1. immediately disclose it in the model prefix,
+  2. explain why,
+  3. ask whether to continue or pause.
+- No silent model switching.
 
 ### When Models Change
 
