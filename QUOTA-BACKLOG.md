@@ -127,6 +127,18 @@ Tasks I can do autonomously to burn Claude tokens productively when:
 ### Priority 2: Medium-Value Work
 *Useful but not urgent*
 
+- [ ] **Video-derived: Setup-Procrastination Guardrails**
+  - Define max time budget for "system tuning" vs "shipping outputs"
+  - Weekly ratio target: build/useful outputs >= 80% of effort
+
+- [ ] **Video-derived: Role-based Agent Structure Audit**
+  - Validate current role split (main/dev/creative/research)
+  - Ensure each role has clear job-to-be-done and boundaries
+
+- [ ] **Video-derived: Caption Quality Scoring for YouTube Skill**
+  - Add transcript quality score + auto-flag low-confidence transcripts
+  - Trigger reprocess path when quality falls below threshold
+
 - [ ] **Database Adoption Decision (for agent operations)**
   - Research when flat files are enough vs when DB is better
   - Identify candidate datasets: token ledger, decisions index, backlog items, traceability links
